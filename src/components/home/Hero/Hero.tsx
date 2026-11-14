@@ -5,7 +5,6 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-container">
 
-        {/* LEFT: Hero Content */}
         <div className="hero-content">
 
           <div className="hero-eyebrow">
@@ -55,78 +54,20 @@ function Hero() {
 
         </div>
 
-        {/* RIGHT: Network Visualization */}
         <div className="hero-visual">
+          <div className="hero-image-frame">
+            <img
+              src="/images/hero-charging.jpg"
+              alt="A laptop on a modern desk with a charging station"
+              className="hero-image"
+              fetchPriority="high"
+            />
 
-          <div className="visual-glow"></div>
-
-          <div className="network-label">
-            <span></span>
-            CHARGING NETWORK
+            <div className="hero-image-caption">
+              <span className="caption-line"></span>
+              Power is closer than you think.
+            </div>
           </div>
-
-          <div className="network-map">
-
-            <div className="network-grid"></div>
-
-            {/* Connection Lines */}
-            <svg className="network-lines" viewBox="0 0 500 450">
-              <line x1="250" y1="220" x2="110" y2="100" />
-              <line x1="250" y1="220" x2="390" y2="110" />
-              <line x1="250" y1="220" x2="370" y2="350" />
-              <line x1="250" y1="220" x2="100" y2="340" />
-            </svg>
-
-            {/* Central User Location */}
-            <div className="user-location">
-              <div className="user-location-pulse"></div>
-              <div className="user-location-dot"></div>
-              <span>You are here</span>
-            </div>
-
-            {/* Provider Nodes */}
-            <div className="provider-node node-one">
-              <span>⚡</span>
-            </div>
-
-            <div className="provider-node node-two">
-              <span>⚡</span>
-            </div>
-
-            <div className="provider-node node-three">
-              <span>⚡</span>
-            </div>
-
-            <div className="provider-node node-four">
-              <span>⚡</span>
-            </div>
-
-            {/* Floating Provider Cards */}
-            <div className="provider-card card-one">
-              <div className="provider-icon">⚡</div>
-              <div>
-                <strong>Nearby Power</strong>
-                <span>0.3 km away</span>
-              </div>
-              <div className="provider-status"></div>
-            </div>
-
-            <div className="provider-card card-two">
-              <div className="provider-icon">⚡</div>
-              <div>
-                <strong>Charging Available</strong>
-                <span>0.7 km away</span>
-              </div>
-              <div className="provider-status"></div>
-            </div>
-
-          </div>
-
-          <div className="visual-caption">
-            <span className="caption-indicator"></span>
-            Discover power around you
-          </div>
-
         </div>
 
       </div>

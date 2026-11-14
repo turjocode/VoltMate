@@ -10,7 +10,7 @@ import ForProviders from "./components/home/ForProviders/ForProviders";
 import WhyVoltMate from "./components/home/WhyVoltMate/WhyVoltMate";
 import SafetyTrust from "./components/home/SafetyTrust/SafetyTrust";
 import FinalCTA from "./components/home/FinalCTA/FinalCTA";
-
+import Sidebar from "./components/Sidebar/Sidebar";
 import Auth from "./pages/Auth/Auth";
 
 function HomePage() {
@@ -26,6 +26,7 @@ function HomePage() {
         <WhyVoltMate />
         <SafetyTrust />
         <FinalCTA />
+        <Sidebar />
       </main>
 
       <Footer />

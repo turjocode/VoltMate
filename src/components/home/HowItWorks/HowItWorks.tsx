@@ -28,6 +28,7 @@ function HowItWorks() {
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="how-container">
+
         <div className="how-heading">
           <span className="section-eyebrow">SIMPLE BY DESIGN</span>
 
@@ -47,7 +48,10 @@ function HowItWorks() {
             <article className="step-card" key={step.number}>
               <div className="step-card-top">
                 <span className="step-number">{step.number}</span>
-                <span className="step-icon">{step.icon}</span>
+
+                <span className="step-icon" aria-hidden="true">
+                  {step.icon}
+                </span>
               </div>
 
               <div className="step-card-content">
@@ -59,6 +63,7 @@ function HowItWorks() {
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

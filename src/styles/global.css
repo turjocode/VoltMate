@@ -1,14 +1,29 @@
-/* 1. Design variables */
+/* =========================================
+   1. LIGHT THEME — DEFAULT
+========================================= */
+
 :root {
-  --color-background: #07111f;
-  --color-surface: #0d1b2a;
-  --color-card: #122338;
+  color-scheme: light;
 
-  --color-primary: #00d4ff;
-  --color-secondary: #367bff;
+  --color-background: #f7f7f4;
+  --color-surface: #ffffff;
+  --color-card: #ffffff;
 
-  --color-text: #f5f8fc;
-  --color-text-muted: #a6b4c5;
+  --color-primary: #3159c9;
+  --color-primary-hover: #2448a8;
+  --color-secondary: #527c79;
+
+  --color-text: #242824;
+  --color-text-muted: #737a73;
+
+  --color-border: #e6e7e1;
+  --color-border-strong: #d5d8d0;
+
+  --color-accent-soft: #edf0fa;
+
+  --shadow-small: 0 2px 8px rgba(25, 30, 25, 0.04);
+  --shadow-medium: 0 8px 24px rgba(25, 30, 25, 0.07);
+  --shadow-large: 0 18px 45px rgba(25, 30, 25, 0.09);
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -16,16 +31,54 @@
   --container-width: 1200px;
 }
 
-/* 2. Reset */
+
+/* =========================================
+   2. DARK THEME
+========================================= */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #171a19;
+  --color-surface: #202523;
+  --color-card: #252c29;
+
+  --color-primary: #91aaff;
+  --color-primary-hover: #b0c1ff;
+  --color-secondary: #82aaa3;
+
+  --color-text: #eceee9;
+  --color-text-muted: #a3aaa2;
+
+  --color-border: #343c37;
+  --color-border-strong: #46504a;
+
+  --color-accent-soft: #292f3d;
+
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-large: 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+
+/* =========================================
+   3. RESET
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. HTML and body */
+
+/* =========================================
+   4. HTML AND BODY
+========================================= */
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -34,9 +87,16 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
-/* 4. Headings */
+
+/* =========================================
+   5. TYPOGRAPHY
+========================================= */
+
 h1,
 h2,
 h3,
@@ -44,9 +104,20 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: 600;
 }
 
-/* 5. Links and buttons */
+p {
+  color: inherit;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   6. LINKS AND BUTTONS
+========================================= */
+
 a {
   color: inherit;
   text-decoration: none;
@@ -57,19 +128,31 @@ button {
   cursor: pointer;
 }
 
-/* 6. Images */
+
+/* =========================================
+   7. IMAGES
+========================================= */
+
 img {
   display: block;
   max-width: 100%;
 }
 
-/* 7. Selection */
+
+/* =========================================
+   8. SELECTION
+========================================= */
+
 ::selection {
   background: var(--color-primary);
-  color: var(--color-background);
+  color: #ffffff;
 }
 
-/* 8. Scrollbar */
+
+/* =========================================
+   9. SCROLLBAR
+========================================= */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -79,10 +162,29 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #29445f;
-  border-radius: 10px;
+  background: var(--color-border-strong);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+
+/* =========================================
+   10. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

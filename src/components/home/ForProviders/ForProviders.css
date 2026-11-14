@@ -82,21 +82,21 @@
   gap: 22px;
   margin-top: 38px;
   padding: 15px 21px;
-  border: 1px solid rgba(0, 212, 255, 0.35);
-  border-radius: 9px;
-  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 5px;
+  background: var(--color-accent-soft);
   color: var(--color-primary);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .providers-cta:hover {
-  transform: translateY(-3px);
-  background: rgba(0, 212, 255, 0.15);
+  transform: translateY(-2px);
+  background: var(--color-border);
 }
 
 /* Visual panel */
@@ -110,12 +110,7 @@
 }
 
 .providers-visual-glow {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: rgba(54, 123, 255, 0.12);
-  filter: blur(90px);
+  display: none;
 }
 
 .earnings-card {
@@ -123,14 +118,11 @@
   z-index: 1;
   width: min(100%, 430px);
   padding: 27px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  background: linear-gradient(
-    145deg,
-    rgba(18, 35, 56, 0.98),
-    rgba(7, 17, 31, 0.98)
-  );
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+  color: var(--color-text);
+  box-shadow: var(--shadow-large);
 }
 
 .earnings-card-header {
@@ -207,7 +199,7 @@
 .chart-grid span {
   width: 100%;
   height: 1px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-top: 1px dashed var(--color-border);
 }
 
 .chart-bars {
@@ -223,21 +215,14 @@
 .chart-bars div {
   width: 100%;
   max-width: 24px;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(
-    to top,
-    rgba(54, 123, 255, 0.3),
-    var(--color-primary)
-  );
-  opacity: 0.85;
-  transition:
-    opacity 0.3s ease,
-    filter 0.3s ease;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-primary);
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
 }
 
 .chart-bars div:hover {
   opacity: 1;
-  filter: brightness(1.3);
 }
 
 .earnings-chart-labels {
@@ -256,7 +241,7 @@
   gap: 12px;
   margin-top: 28px;
   padding: 16px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 .activity-icon {
@@ -265,9 +250,9 @@
   height: 38px;
   flex-shrink: 0;
   place-items: center;
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 11px;
-  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-accent-soft);
   color: var(--color-primary);
   font-size: 1.4rem;
 }
@@ -290,9 +275,9 @@
 .activity-status {
   margin-left: auto;
   padding: 6px 9px;
-  border-radius: 6px;
-  background: rgba(101, 230, 165, 0.1);
-  color: #65e6a5;
+  border-radius: 4px;
+  background: var(--color-accent-soft);
+  color: var(--color-secondary);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -309,18 +294,17 @@
   align-items: center;
   gap: 10px;
   padding: 14px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  background: rgba(18, 35, 56, 0.95);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-card);
   color: var(--color-text);
   font-size: 0.8rem;
   font-weight: 600;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-medium);
 }
 
 .provider-floating-badge span {
-  color: #65e6a5;
+  color: var(--color-secondary);
   font-size: 1.1rem;
 }
 

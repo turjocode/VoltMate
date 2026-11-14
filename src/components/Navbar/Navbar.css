@@ -1,4 +1,7 @@
-/* NAVBAR */
+/* =========================================
+   NAVBAR
+========================================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -8,16 +11,20 @@
   z-index: 1000;
   display: flex;
   align-items: center;
-  transition: background 0.3s ease, height 0.3s ease,
-              box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    height 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .navbar-scrolled {
   height: 72px;
-  background: rgba(7, 17, 31, 0.88);
+  background: color-mix(in srgb, var(--color-background) 94%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-small);
 }
 
 .navbar-container {
@@ -28,7 +35,11 @@
   justify-content: space-between;
 }
 
-/* LOGO */
+
+/* =========================================
+   LOGO
+========================================= */
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -37,6 +48,7 @@
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -1px;
+  color: var(--color-text);
 }
 
 .logo-icon {
@@ -44,8 +56,8 @@
   height: 35px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
-  color: var(--color-background);
+  border-radius: 8px;
+  color: #ffffff;
   background: var(--color-primary);
   font-size: 22px;
   font-weight: 700;
@@ -55,7 +67,11 @@
   color: var(--color-primary);
 }
 
-/* NAVIGATION LINKS */
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -73,7 +89,11 @@
   color: var(--color-primary);
 }
 
-/* AUTHENTICATION BUTTONS */
+
+/* =========================================
+   NAVBAR ACTIONS
+========================================= */
+
 .navbar-actions {
   display: flex;
   align-items: center;
@@ -94,27 +114,73 @@
 .signup-button,
 .mobile-signup {
   padding: 11px 22px;
-  border-radius: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
   background: var(--color-primary);
-  color: var(--color-background);
+  color: #ffffff;
   font-size: 13px;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .signup-button:hover,
 .mobile-signup:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.25);
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-1px);
 }
 
-/* MOBILE MENU ELEMENTS */
+
+/* =========================================
+   THEME TOGGLE
+========================================= */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle i {
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-primary);
+  background: var(--color-accent-soft);
+}
+
+
+/* =========================================
+   MOBILE MENU ELEMENTS
+========================================= */
+
 .mobile-auth,
 .menu-toggle {
   display: none;
 }
 
-/* TABLET AND MOBILE */
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 900px) {
   .navbar-container {
     width: calc(100% - 40px);
@@ -127,7 +193,16 @@
   .navbar-links > a {
     font-size: 12px;
   }
+
+  .navbar-actions {
+    gap: 14px;
+  }
 }
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 760px) {
   .navbar {
@@ -148,13 +223,17 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: rgba(7, 17, 31, 0.98);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-medium);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease,
-                visibility 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
   }
 
   .navbar-links.menu-open {
@@ -166,7 +245,7 @@
   .navbar-links > a {
     padding: 15px 0;
     font-size: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .navbar-actions {
@@ -176,11 +255,12 @@
   .mobile-auth {
     display: flex;
     align-items: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 18px;
     padding-top: 22px;
   }
 
-  .mobile-auth > a:first-child {
+  .mobile-auth > a:first-of-type {
     font-size: 14px;
   }
 
@@ -205,7 +285,9 @@
     height: 2px;
     background: var(--color-text);
     border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
   }
 
   .menu-toggle.active span:first-child {
@@ -218,5 +300,19 @@
 
   .menu-toggle.active span:last-child {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    transition-duration: 0.01ms !important;
   }
 }

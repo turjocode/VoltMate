@@ -2,7 +2,7 @@ import "./FinalCTA.css";
 
 function FinalCTA() {
   return (
-    <section className="final-cta">
+    <section className="final-cta" id="final-cta">
       <div className="final-cta-glow"></div>
 
       <div className="final-cta-content">
