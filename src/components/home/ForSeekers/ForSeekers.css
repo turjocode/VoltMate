@@ -241,13 +241,13 @@
 }
 
 .badge-compatible {
-  top: 12%;
-  right: -10px;
+  top: -50px;
+  right: 60px;
 }
 
 .badge-price {
-  bottom: 12%;
-  left: -15px;
+  bottom: -50px;
+  left: 60px;
 }
 
 .badge-check {
